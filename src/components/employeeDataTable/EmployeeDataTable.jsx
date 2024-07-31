@@ -3,12 +3,28 @@ import './employeeDataTable.scss';
 import EmployeeDataTableRow from "./EmployeeDataTableRow";
 import useFetchEmployeeData from "../../hooks/useFetchEmployeeData";
 import TableRowPlaceholder from "./tableRowPlaceholder/TableRowPlaceholder";
+import EmployeeDetails from './EmployeeDetails/EmployeeDetails';
+import { useState } from 'react';
 
 export default function EmployeeDataTable() {
     const {data, employees, search, handleSearch, ref} = useFetchEmployeeData();
+    const [detailsModalIsOpen, setDetailsModalIsOpen] = useState(false);
+    const [singleEmployeeData, setSingleEmployeeData] = useState(null);
+
+    // Getting single employee data from the EmployeeDataTableRow component and opens the modal that shows that data
+    const handleEmployeeDetailsModal = (state, details) => {
+        if (state === "open") {
+            setSingleEmployeeData(details);
+            setDetailsModalIsOpen(true);
+        } else if (state === "close") {
+            setSingleEmployeeData(null);
+            setDetailsModalIsOpen(false);
+        }
+    }
 
     return (
         <div className="employeeDataTableContainer">
+            {detailsModalIsOpen && <EmployeeDetails data={singleEmployeeData} modalFunction={handleEmployeeDetailsModal}/>}
             <div className="employeeDataTableSearchContainer">
                 <input type="search" value={search} onChange={handleSearch} />
                 <button>Export</button>
@@ -29,7 +45,7 @@ export default function EmployeeDataTable() {
                     </thead>
                     <tbody>
                         {employees.map((employee, index) => (
-                            <EmployeeDataTableRow key={index} employee={employee} />
+                            <EmployeeDataTableRow key={index} employee={employee} modalFunction={handleEmployeeDetailsModal}/>
                         ))}  
                         {employees.length !== data.total && <TableRowPlaceholder/>}
                         <tr className="inViewReference" ref={ref}></tr>

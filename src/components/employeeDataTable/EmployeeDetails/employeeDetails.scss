@@ -1,0 +1,114 @@
+@use '../../../assets/' as *;
+
+.employeeDetailsContainer {
+    background-color: $backgroundTransparent;
+    backdrop-filter: blur(5px);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 60;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: detailsAppear .3s ease-in-out;
+
+    .employeeDetails {
+        position: relative;
+        z-index: 70;
+        background-color: $backgroundPrimary;
+        border-radius: $tableBorderRadius;
+        margin: $tableDataPadding;
+        border: 1px solid $surfaceBorder15;
+        max-height: calc(100% - ($tableDataPadding * 2));
+        overflow: auto;
+        @include element-shadow(rgba(0, 0, 0, 0.192));
+
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 6px;
+        }
+        &::-webkit-scrollbar-track {
+            background: $surfaceBackground05;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: $textPrimary;
+            border-radius: 10px;
+        }
+
+        .closeButton {
+            position: sticky;
+            height: 0;
+            top: calc($tableDataPadding - 5px);
+            padding-right: calc($tableDataPadding - 5px);
+            border-radius: 100%;
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .detailsWrap {
+            background-color: $surfaceBackground05;
+            
+            border-radius: $tableBorderRadius;
+            padding: calc($tableDataPadding * 1);
+
+            .detailsHeader {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            img {
+                width: 100%;
+                max-width: 700px;
+                height: auto;
+                object-fit: cover;
+                border-radius: calc($tableBorderRadius * 0.7);
+            }
+
+            .detailGroup {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                padding-top: 16px;
+            }
+    
+            .detailLabel {
+                display: block;
+                width: 100%;
+                font-size: 1rem;
+                padding: 4px 0;
+                color: $textPrimary50;
+                border-bottom: 1px solid $surfaceBorder15;
+            }
+    
+            .nameDetail {
+                font-size: 2rem;
+                font-weight: 600;
+                
+            }
+            .positionDetail {
+                font-size: 1.5rem;
+            }
+    
+            .aboutDetail {
+                max-width: 700px;
+            }
+        }
+
+        
+    }
+}
+
+@keyframes detailsAppear {
+    0% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }
+}

@@ -14,3 +14,17 @@
     background-repeat: repeat;
     color: transparent;
 }
+
+@mixin element-shadow($color) {
+    -webkit-box-shadow: 0px 15px 20px 6px $color;
+    -moz-box-shadow: 0px 15px 20px 6px $color;
+    box-shadow: 0px 15px 20px 6px $color;
+}
+
+@mixin hover {
+    @media (hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+}

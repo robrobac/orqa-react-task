@@ -1,17 +1,15 @@
-@use '../../../assets/' as *;
+@use '../../assets/' as *;
 
-.detailsButton {
+.iconButton {
     width: $tableDataDetailsButtonSize;
     height: $tableDataDetailsButtonSize;
     border-radius: 100%;
-    background-color: transparent;
+    background-color: $backgroundPrimary;
     border: 1px solid $surfaceBorder15;
     cursor: pointer;
 
-    @media (hover: hover) {
-        &:hover {
-            border: 1px solid $textPrimary;
-        }
+    @include hover {
+        border: 1px solid $textPrimary;
     }
 
     svg {

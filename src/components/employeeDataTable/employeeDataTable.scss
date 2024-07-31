@@ -4,7 +4,7 @@
 // Data Table Container, wraps the searchbar and table 
 .employeeDataTableContainer {
     width: 100%;
-    
+    position: relative;
     text-align: left;
 
     // TODO REMOVE THIS TO SEPARATE FILE
@@ -36,7 +36,6 @@
 .employeeDataTable {
     width: calc(100% - 2px);
     height: calc(100vh - $headerHeight - $tableSearchHeight - 10px);
-    position: relative;
     
     // Table Row shared styles
     tr {
@@ -61,6 +60,7 @@
         -webkit-box-shadow: 0px 15px 20px 6px $backgroundPrimary;
         -moz-box-shadow: 0px 15px 20px 6px $backgroundPrimary;
         box-shadow: 0px 15px 20px 6px $backgroundPrimary;
+        z-index: 50;
         tr {
             width: 100%;
             max-width: 1440px;
@@ -92,11 +92,13 @@
             border: 1px solid $surfaceBorder15;
             border-radius: 20px;
 
-            -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
-            -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
-            box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+            @include element-shadow($backgroundPrimary);
 
             animation: tableRowAppear 0.3s linear;
+
+            @include hover {
+                border: 1px solid $textPrimary;
+            }
 
             &.inViewReference {
                 border: unset;
