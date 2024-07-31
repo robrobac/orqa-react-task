@@ -7,11 +7,6 @@
     position: relative;
     text-align: left;
 
-    // TODO REMOVE THIS TO SEPARATE FILE
-    .employeeDataTableSearchContainer {
-        height: $tableSearchHeight;
-    }
-
     // Data table wrapper, here for horizontal scrollbar
     .employeeDataTableWrapper {
         width: 100%;
@@ -92,7 +87,9 @@
             border: 1px solid $surfaceBorder15;
             border-radius: 20px;
 
-            @include element-shadow($backgroundPrimary);
+            -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+            -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
 
             animation: tableRowAppear 0.3s linear;
 

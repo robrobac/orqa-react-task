@@ -1,0 +1,62 @@
+@use '../../../assets/' as *;
+
+.employeeDataTableSearchContainer {
+    height: $tableSearchHeight;
+    display: flex;
+    justify-content: center;
+    padding: $tableDataPadding;
+    padding-top: calc($tableDataPadding * 1.5);
+
+    .searchWrap {
+        width: 100%;
+        max-width: 1440px;
+        display: flex;
+        justify-content: space-between;
+
+        .searchBar {
+            width: 100%;
+            max-width: 700px;
+            border: 1px solid $surfaceBorder15;
+            background-color: $surfaceBackground05;
+            border-radius: $inputBorderRadius;
+            display: flex;
+            align-items: center;
+            gap: calc($tableDataPadding / 2);
+            padding: calc($tableDataPadding / 2);
+
+            &:focus-within {
+                border: 1px solid $textPrimary;
+
+                svg {
+                    fill: $textPrimary;
+                }
+            }
+
+            label {
+                display: flex;
+
+                
+
+                svg {
+                    fill: $surfaceBackground15;
+                }
+            }
+
+            input {
+                width: 100%;
+                height: $searchInputHeight;
+                background-color: transparent;
+                
+                
+                border: none;
+                
+                font-size: 1rem;
+    
+                &:focus {
+                    outline: none;
+                    border: none;
+                }
+            }
+        }
+    }
+}

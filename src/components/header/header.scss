@@ -1,6 +1,38 @@
 @use '../../assets/index' as *;
 
 .header {
-    height: $headerHeight;
-    background-color: red;
+    background-color: $surfaceBackground05;
+
+    .navList {
+        height: $headerHeight;
+        padding-top: $tableDataPadding;
+        display: flex;
+
+        .navItem {
+            cursor: pointer;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $textPrimary50;
+            font-size: 1.2rem;
+            border-radius: $tableBorderRadius $tableBorderRadius 0 0;
+            border: 1px solid $surfaceBorder15;
+            border-bottom: none;
+
+            &:not(.navActive) {
+                background-color: $surfaceBackground05;
+
+                @include hover {
+                    color: $textPrimary;
+                }
+            }
+
+            &.navActive {
+                background-color: $backgroundPrimary;
+                color: $textPrimary;
+                font-weight: 600;
+            }
+        }
+    }
 }

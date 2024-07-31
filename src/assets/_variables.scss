@@ -1,11 +1,14 @@
 $headerHeight: 60px;
 
 // TABLE VARIABLES
+$searchInputHeight: 40px;
+
 $tableImageSize: 5rem;
 $tableBorderRadius: 1rem;
+$inputBorderRadius: .5rem;
 $tableDataPadding: 1rem;
 $tableDataDetailsButtonSize: 48px;
-$tableSearchHeight: 30px;
+$tableSearchHeight: calc($searchInputHeight + ($tableDataPadding * 2.5));
 
 // COLOR VARIABLES
 $backgroundPrimary: rgba(31, 31, 31, 1);

@@ -8,6 +8,7 @@
   color: $textPrimary;
 }
 
+
 body {
   background-color: $backgroundPrimary;
   height: 100vh;
@@ -18,6 +19,14 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 .loadingImage {

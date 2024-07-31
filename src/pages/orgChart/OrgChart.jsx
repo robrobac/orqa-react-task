@@ -1,7 +1,13 @@
+import Header from "../../components/header/Header";
+
 export default function OrgChart() {
     return (
-        <div>
-            Organisational Chart Page
-        </div>
+        <>
+            <Header currentPage={"orgChart"}/>
+            <main>
+                aaaaaaaaa
+            </main>
+            
+        </>
     )
 }

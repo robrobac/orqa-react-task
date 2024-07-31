@@ -24,7 +24,9 @@
         border: 1px solid $surfaceBorder15;
         max-height: calc(100% - ($tableDataPadding * 2));
         overflow: auto;
-        @include element-shadow(rgba(0, 0, 0, 0.192));
+        -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.4);
+        box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.4);
 
         &::-webkit-scrollbar {
             width: 0;

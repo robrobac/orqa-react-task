@@ -5,6 +5,7 @@ import useFetchEmployeeData from "../../hooks/useFetchEmployeeData";
 import TableRowPlaceholder from "./tableRowPlaceholder/TableRowPlaceholder";
 import EmployeeDetails from './EmployeeDetails/EmployeeDetails';
 import { useState } from 'react';
+import DataSearch from './dataSearch/DataSearch';
 
 export default function EmployeeDataTable() {
     const {data, employees, search, handleSearch, ref} = useFetchEmployeeData();
@@ -25,10 +26,7 @@ export default function EmployeeDataTable() {
     return (
         <div className="employeeDataTableContainer">
             {detailsModalIsOpen && <EmployeeDetails data={singleEmployeeData} modalFunction={handleEmployeeDetailsModal}/>}
-            <div className="employeeDataTableSearchContainer">
-                <input type="search" value={search} onChange={handleSearch} />
-                <button>Export</button>
-            </div>
+            <DataSearch search={search} handleSearch={handleSearch}/>
             <div className="employeeDataTableWrapper">
                 <table className="employeeDataTable">
                     {/* <caption>Table 1</caption> */}

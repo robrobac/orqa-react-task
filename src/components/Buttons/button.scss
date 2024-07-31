@@ -16,3 +16,16 @@
         fill: $textPrimary;
     }
 }
+
+.exportButton {
+    width: fit-content;
+    border-radius: 50px;
+    background-color: $backgroundPrimary;
+    border: 1px solid $surfaceBorder15;
+    padding: 0 $tableDataPadding;
+    cursor: pointer;
+
+    @include hover {
+        border: 1px solid $textPrimary;
+    }
+}

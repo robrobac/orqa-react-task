@@ -4,7 +4,7 @@ import Header from "../../components/header/Header";
 export default function Employees() {
     return (
         <>
-            <Header />
+            <Header currentPage={"employees"}/>
             <main>
                 <EmployeeDataTable />
             </main>
