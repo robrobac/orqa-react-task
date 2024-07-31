@@ -1,15 +1,41 @@
+@use './assets/' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  @include reset-styles;
+  font-family: "Roboto", sans-serif;
+  color: $textPrimary;
 }
 
+body {
+  background-color: $backgroundPrimary;
+  height: 100vh;
+  overflow: hidden;
+}
 
-table img {
-    height: 100px;
-    width: 100px;
-    object-fit: cover;
-    border-radius: 100%;
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loadingImage {
+  @include loading-element($tableImageSize);
+  animation: animatedBackground 20s linear infinite;
+}
+
+.loadingText {
+  @include loading-element(100%, fit-content);
+  animation: animatedBackground 15s linear infinite;
+}
+
+// Placeholder gradient animation, loading-element mixin or gradient background must be included
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1000px 0;
+  }
 }

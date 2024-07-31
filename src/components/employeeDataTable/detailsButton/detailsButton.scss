@@ -1,0 +1,20 @@
+@use '../../../assets/' as *;
+
+.detailsButton {
+    width: $tableDataDetailsButtonSize;
+    height: $tableDataDetailsButtonSize;
+    border-radius: 100%;
+    background-color: transparent;
+    border: 1px solid $surfaceBorder15;
+    cursor: pointer;
+
+    @media (hover: hover) {
+        &:hover {
+            border: 1px solid $textPrimary;
+        }
+    }
+
+    svg {
+        fill: $textPrimary;
+    }
+}

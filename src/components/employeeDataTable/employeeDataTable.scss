@@ -1,0 +1,136 @@
+@use '../../assets/' as *;
+
+
+// Data Table Container, wraps the searchbar and table 
+.employeeDataTableContainer {
+    width: 100%;
+    
+    text-align: left;
+
+    // TODO REMOVE THIS TO SEPARATE FILE
+    .employeeDataTableSearchContainer {
+        height: $tableSearchHeight;
+    }
+
+    // Data table wrapper, here for horizontal scrollbar
+    .employeeDataTableWrapper {
+        width: 100%;
+        overflow-x: auto;
+        
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 6px;
+        }
+        &::-webkit-scrollbar-track {
+            background: $surfaceBackground05;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: $textPrimary;
+            border-radius: 10px;
+        }
+    }
+}
+
+
+// Data Table
+.employeeDataTable {
+    width: calc(100% - 2px);
+    height: calc(100vh - $headerHeight - $tableSearchHeight - 10px);
+    position: relative;
+    
+    // Table Row shared styles
+    tr {
+        display: grid;
+        grid-template-columns:
+            50px 
+            calc($tableImageSize + $tableDataPadding * 2) 
+            repeat(2, minmax(130px, 1fr)) 
+            repeat(2, minmax(250px, 2fr)) 
+            calc($tableDataDetailsButtonSize + $tableDataPadding * 2)
+        ;
+    }
+
+    thead {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        position: absolute;
+        background-color: $backgroundPrimary;
+        padding: 0 10px;
+        border-bottom: 1px solid $surfaceBorder15;
+        -webkit-box-shadow: 0px 15px 20px 6px $backgroundPrimary;
+        -moz-box-shadow: 0px 15px 20px 6px $backgroundPrimary;
+        box-shadow: 0px 15px 20px 6px $backgroundPrimary;
+        tr {
+            width: 100%;
+            max-width: 1440px;
+            th {
+                padding: $tableDataPadding;
+                font-weight: 300;                
+            }
+        }
+    }
+
+    tbody {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: calc($tableDataPadding * 1.5);
+        height: 100%;
+        padding: 0 10px;
+        overflow-y: scroll;
+        padding-top: 70px;
+
+        &::-webkit-scrollbar {
+            width: 1px;
+        }
+        
+        tr {
+            width: 100%;
+            max-width: 1440px;
+            background-color: $surfaceBackground05;
+            border: 1px solid $surfaceBorder15;
+            border-radius: 20px;
+
+            -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+            -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+
+            animation: tableRowAppear 0.3s linear;
+
+            &.inViewReference {
+                border: unset;
+                background-color: unset;
+            }
+
+            td {
+                padding: $tableDataPadding;
+                display: flex;
+                align-items: center;
+                font-weight: 400; 
+                
+                img {
+                    height: $tableImageSize;
+                    width: $tableImageSize;
+                    object-fit: cover;
+                    border-radius: 100%;
+
+                    &.imageFailedToLoad {
+                        border-radius: unset;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Animation for table row appearance animation
+@keyframes tableRowAppear {
+    0% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }
+}

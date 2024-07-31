@@ -1,34 +1,31 @@
 /* eslint-disable react/prop-types */
 
-import { useEffect, useState } from 'react';
-import placeholderImage from '../../assets/placeholderImage.svg'
-import DetailsButton from './DetailsButton';
+import { useState } from 'react';
+import DetailsButton from './detailsButton/DetailsButton';
 
 export default function EmployeeDataTableRow({employee}) {
     const [imageLoaded, setImageLoaded] = useState(false);
-
-    // Handling image URLs that are not working
-    useEffect(() => {
-        const img = new Image();
-        img.onload = () => setImageLoaded(true);
-        img.src = employee.imageUrl;
-    }, [employee.imageUrl]);
+    const [imageFailedToLoad, setImageFailedToLoad] = useState(false)
 
     return (
         <tr>
             <td className="id">{employee.id}</td>
             <td className='image'>
                 <img
-                    src={imageLoaded ? employee.imageUrl : placeholderImage}
+                    className={`${!imageLoaded ? "loadingImage" : ""} ${imageFailedToLoad ? "imageFailedToLoad" : ""}`}
+                    src={employee.imageUrl}
                     alt={`Employee ${employee.firstName + employee.lastName} image`}
-                    onError={(e) => (e.target.src = placeholderImage)}
+                    onLoad={() => setImageLoaded(true)}
+                    onError={() => setImageFailedToLoad(true)}
                 />
             </td>
             <td className='firstName'>{employee.firstName}</td>
             <td className='lastName'>{employee.lastName}</td>
             <td className='email'>{employee.email}</td>
             <td className='position'>{employee.position}</td>
-            <td className='actions'><DetailsButton /></td>
+            <td className='actions'>
+                <DetailsButton />
+            </td>
         </tr>
     )
 }

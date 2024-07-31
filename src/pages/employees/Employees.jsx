@@ -1,9 +1,14 @@
 import EmployeeDataTable from "../../components/employeeDataTable/EmployeeDataTable";
+import Header from "../../components/header/Header";
 
 export default function Employees() {
     return (
-        <div>
-            <EmployeeDataTable />
-        </div>
+        <>
+            <Header />
+            <main>
+                <EmployeeDataTable />
+            </main>
+            
+        </>
     )
 }
