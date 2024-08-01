@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Button from '../Buttons/Button';
 import DetailsIcon from '../../assets/icons/DetailsIcon';
+import ProfileImg from '../profileImg/ProfileImg';
 
 export default function EmployeeDataTableRow({employee, modalFunction}) {
     const [imageLoaded, setImageLoaded] = useState(false);
@@ -17,13 +18,7 @@ export default function EmployeeDataTableRow({employee, modalFunction}) {
         <tr>
             <td className="id">{employee.id}</td>
             <td className='image'>
-                <img
-                    className={`${!imageLoaded ? "loadingImage" : ""} ${imageFailedToLoad ? "imageFailedToLoad" : ""}`}
-                    src={employee.imageUrl}
-                    alt={`Employee ${employee.firstName + employee.lastName} image`}
-                    onLoad={() => setImageLoaded(true)}
-                    onError={() => setImageFailedToLoad(true)}
-                />
+                <ProfileImg employee={employee} />
             </td>
             <td className='firstName'>{employee.firstName}</td>
             <td className='lastName'>{employee.lastName}</td>

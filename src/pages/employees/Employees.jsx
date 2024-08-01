@@ -5,7 +5,7 @@ export default function Employees() {
     return (
         <>
             <Header currentPage={"employees"}/>
-            <main>
+            <main className="employeesMain">
                 <EmployeeDataTable />
             </main>
             

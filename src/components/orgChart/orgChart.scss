@@ -1,0 +1,105 @@
+@use '../../assets/' as *;
+
+.orgChartContainer {
+    width: 100vw;
+    height: calc(100vh - $headerHeight);
+    overflow: scroll;
+    cursor: grab;
+    user-select: none;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+    &::-webkit-scrollbar-track {
+        background: $surfaceBackground05;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $textPrimary;
+        border-radius: 10px;
+    }
+
+    .orgChart {
+        padding: 25%;
+        animation: orgChartRowAppear 1s linear;
+        
+      
+        .p-person {
+            background: $surfaceBackground05;
+            border-radius: $tableBorderRadius;
+            border: 1px solid $surfaceBorder15;
+
+            -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+            -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+
+            .nodeImage {
+                height: $tableImageSize;
+                width: $tableImageSize;
+                object-fit: cover;
+                border-radius: 100%;
+                -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+                -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+                box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+    
+                &.imageFailedToLoad {
+                    border-radius: unset;
+                }
+            }
+            .nodeName {
+                font-size: 1rem;
+                color: $textPrimary;
+                margin: 8px;
+            }
+            .nodePosition {
+                font-size: .8rem;
+                max-width: 150px;
+                color: $textPrimary75;
+                margin: 8px;
+            }
+
+            .p-node-toggler {
+                background: $backgroundPrimary;
+                border: 1px solid $surfaceBorder15;
+
+                width: 28px;
+                height: 28px;
+
+                bottom: -14px;
+                margin-left: -14px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                i svg {
+                    width: 24px;
+                    height: 24px;
+                    padding: 6px 5px;
+                    padding-top: 3px;
+                }
+
+                @include hover {
+                    border: 1px solid $textPrimary;
+                }
+            }
+        }
+
+    }
+}
+
+#firstNode {
+    scroll-margin: 100px;
+}
+
+@keyframes orgChartRowAppear {
+    0% {
+        opacity: 0;
+        display: none;
+    }
+    
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}

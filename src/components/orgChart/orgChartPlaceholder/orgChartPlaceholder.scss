@@ -1,0 +1,27 @@
+@use '../../../assets/' as *;
+
+.orgChartContainerPlaceholder {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .orgChartPlaceholder {
+        padding: unset !important;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        animation-duration: 0.5s;
+    
+        .personNodePlaceholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    
+            p {
+                margin: 6px !important;
+            }
+        }
+    }
+}

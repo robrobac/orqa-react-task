@@ -6,13 +6,13 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import OrgChart from './pages/orgChart/OrgChart.jsx';
 import Employees from './pages/employees/Employees.jsx';
+import OrgChartPage from './pages/orgChart/OrgChartPage.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <OrgChart />,
+    element: <OrgChartPage />,
   },
   {
     path: "/employees",

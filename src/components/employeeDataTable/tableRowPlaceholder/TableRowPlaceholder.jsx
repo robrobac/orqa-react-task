@@ -1,5 +1,3 @@
-import './tableRowPlaceholder.scss'
-
 export default function TableRowPlaceholder() {
     return (
         <>

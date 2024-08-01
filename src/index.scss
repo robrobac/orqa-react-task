@@ -1,14 +1,13 @@
 @use './assets/' as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
-@import "primereact/resources/themes/soho-dark/theme.css";
+@import 'primereact/resources/themes/arya-purple/theme.css';
 
-* {
+*:not(.orgChart *) {
   @include reset-styles;
   font-family: "Roboto", sans-serif;
   color: $textPrimary;
 }
-
 
 body {
   background-color: $backgroundPrimary;
@@ -16,10 +15,17 @@ body {
   overflow: hidden;
 }
 
-main {
+.employeesMain {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-left: 1px solid $surfaceBorder15;
+  border-right: 1px solid $surfaceBorder15;
+}
+
+.orgChartMain {
+  border-left: 1px solid $surfaceBorder15;
+  border-right: 1px solid $surfaceBorder15;
 }
 
 li {

@@ -85,7 +85,7 @@
             max-width: 1440px;
             background-color: $surfaceBackground05;
             border: 1px solid $surfaceBorder15;
-            border-radius: 20px;
+            border-radius: $tableBorderRadius;
 
             -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
             -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
@@ -113,6 +113,10 @@
                     width: $tableImageSize;
                     object-fit: cover;
                     border-radius: 100%;
+
+                    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+                    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+                    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
 
                     &.imageFailedToLoad {
                         border-radius: unset;

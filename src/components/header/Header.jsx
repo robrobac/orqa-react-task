@@ -7,7 +7,7 @@ export default function Header({currentPage}) {
             <nav>
                 <div className='navList'>
                     <a className={`navItem ${currentPage === 'orgChart' ? 'navActive' : ''}`} href='/'>
-                        Organisation Chart
+                        Organization Chart
                     </a>
                     <a className={`navItem ${currentPage === 'employees' ? 'navActive' : ''}`} href='/employees'>
                         Employees
