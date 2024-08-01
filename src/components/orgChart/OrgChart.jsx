@@ -5,9 +5,9 @@ import OrgChartPlaceholder from "./orgChartPlaceholder/OrgChartPlaceholder";
 import OrgChartDialog from "./orgChartDialog/OrgChartDialog";
 
 export default function OrgChart() {
-    const { data, isLoading } = useCreateOrgChartData();
+    const { data, isLoading, error } = useCreateOrgChartData();
 
-    if (isLoading) {
+    if (isLoading || error) {
         return <OrgChartPlaceholder />
     } else {
         return (
