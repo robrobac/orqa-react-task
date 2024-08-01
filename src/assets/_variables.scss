@@ -1,14 +1,13 @@
 $headerHeight: 80px;
+$thumbnailSize: 5rem;
+$borderRadius: 1rem;
+$padding: 1rem;
+$inputBorderRadius: calc($borderRadius / 2);
 
 // TABLE VARIABLES
 $searchInputHeight: 40px;
-
-$tableImageSize: 5rem;
-$tableBorderRadius: 1rem;
-$inputBorderRadius: .5rem;
-$tableDataPadding: 1rem;
 $tableDataDetailsButtonSize: 48px;
-$tableSearchHeight: calc($searchInputHeight + ($tableDataPadding * 2.5));
+$tableSearchHeight: calc($searchInputHeight + ($padding * 2.5));
 
 // COLOR VARIABLES
 $backgroundPrimary: rgba(31, 31, 31, 1);

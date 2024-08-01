@@ -37,7 +37,7 @@ a {
 }
 
 .loadingImage {
-  @include loading-element($tableImageSize);
+  @include loading-element($thumbnailSize);
   animation: animatedBackground 20s linear infinite;
 }
 

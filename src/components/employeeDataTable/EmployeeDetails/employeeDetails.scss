@@ -19,10 +19,10 @@
         position: relative;
         z-index: 70;
         background-color: $backgroundPrimary;
-        border-radius: $tableBorderRadius;
-        margin: $tableDataPadding;
+        border-radius: $borderRadius;
+        margin: $padding;
         border: 1px solid $surfaceBorder15;
-        max-height: calc(100% - ($tableDataPadding * 2));
+        max-height: calc(100% - ($padding * 2));
         overflow: auto;
         -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4);
         -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.4);
@@ -43,8 +43,8 @@
         .closeButton {
             position: sticky;
             height: 0;
-            top: calc($tableDataPadding - 5px);
-            padding-right: calc($tableDataPadding - 5px);
+            top: calc($padding - 5px);
+            padding-right: calc($padding - 5px);
             border-radius: 100%;
             display: flex;
             justify-content: flex-end;
@@ -53,8 +53,8 @@
         .detailsWrap {
             background-color: $surfaceBackground05;
             
-            border-radius: $tableBorderRadius;
-            padding: calc($tableDataPadding * 1);
+            border-radius: $borderRadius;
+            padding: calc($padding * 1);
 
             .detailsHeader {
                 display: flex;
@@ -67,7 +67,7 @@
                 max-width: 700px;
                 height: auto;
                 object-fit: cover;
-                border-radius: calc($tableBorderRadius * 0.7);
+                border-radius: calc($borderRadius * 0.7);
             }
 
             .detailGroup {

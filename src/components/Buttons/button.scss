@@ -22,7 +22,7 @@
     border-radius: 50px;
     background-color: $backgroundPrimary;
     border: 1px solid $surfaceBorder15;
-    padding: 0 $tableDataPadding;
+    padding: 0 $padding;
     cursor: pointer;
 
     @include hover {

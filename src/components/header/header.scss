@@ -5,7 +5,7 @@
 
     .navList {
         height: $headerHeight;
-        padding-top: $tableDataPadding;
+        padding-top: $padding;
         display: flex;
 
         .navItem {
@@ -16,7 +16,7 @@
             align-items: center;
             color: $textPrimary50;
             font-size: 1.2rem;
-            border-radius: $tableBorderRadius $tableBorderRadius 0 0;
+            border-radius: $borderRadius $borderRadius 0 0;
             border: 1px solid $surfaceBorder15;
             border-bottom: none;
 

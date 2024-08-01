@@ -2,18 +2,18 @@
 
 .p-dialog {
     background-color: $backgroundPrimary;
-    padding: $tableDataPadding;
+    padding: $padding;
     line-height: 1.5rem;
-    border-radius: $tableBorderRadius;
+    border-radius: $borderRadius;
     border: 1px solid $surfaceBorder15;
 
     .p-dialog-header {
-        padding-bottom: $tableDataPadding;
+        padding-bottom: $padding;
         border-bottom: 1px solid $surfaceBorder15;
     }
 
     .p-dialog-content {
-        padding-top: $tableDataPadding;
+        padding-top: $padding;
     }
 
     .p-dialog-header, .p-dialog-content {
