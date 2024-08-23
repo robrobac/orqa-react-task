@@ -45,7 +45,7 @@ export default function EmployeeDataTable() {
                         {employees.map((employee, index) => (
                             <EmployeeDataTableRow key={index} employee={employee} modalFunction={handleEmployeeDetailsModal}/>
                         ))}  
-                        {employees.length !== data.total && <TableRowPlaceholder/>}
+                        {(employees.length !== data.total && search == "") && <TableRowPlaceholder/>}
                         <tr className="inViewReference" ref={ref}></tr>
                     </tbody>
                     

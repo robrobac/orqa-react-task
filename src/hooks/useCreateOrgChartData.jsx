@@ -45,22 +45,24 @@ export default function useCreateOrgChartData() {
     useEffect(() => {
         const fetchAllData = async () => {
             setIsLoading(true);
-
-            let baseUrl = import.meta.env.VITE_API_PATH;
-            let allData = [];
             let page = 1;
+            let baseUrl = import.meta.env.VITE_API_PATH;
+            let fetchUrl = `${baseUrl}?page=${page}`;
+            let allData = [];
+            
 
             try {
 
                 // fetch employees page by page untill next page is null
                 while (page) {
-                    const response = await fetch(`${baseUrl}?page=${page}`);
+                    const response = await fetch(fetchUrl);
                     const json = await response.json();
 
                     allData = [...allData, ...json.data];
 
                     if (json.next_page_url) {
                         page += 1;
+                        fetchUrl = json.next_page_url;
                     } else {
                         page = null;
                     }
