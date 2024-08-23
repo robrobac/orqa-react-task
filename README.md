@@ -20,3 +20,4 @@ display an organizational chart of employees. The application will use the exist
 ### **Employee search**
 - #### **Adding the functionality of searching employees by first and last name.**
 - #### **Implementation of a search component that will query the API and display results in real time.**
+- 
